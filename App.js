@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, TextInput, Image, ScrollView, Touchable
 import { Ionicons } from '@expo/vector-icons';
 import BurguerXeg from './assets/img/x-eg.jpg';
 import Logoburguer from './assets/img/logoburguer.png';
+import { Header } from './src/components/header/index';
 
 
 export default function App() {
@@ -56,13 +57,9 @@ export default function App() {
 
   return (
     <ScrollView style={styles.container}>
-      <View style={styles.header}>
-
-        <Text style={styles.tituloheader}>TASTY BURGE
-          <Ionicons name="ios-fast-food-outline" size={40} color="#A5841B" />
-        </Text>
-
-      </View>
+      
+      <Header title="Header"/>
+    
 
       <View style={styles.descricao}>
         <Image source={Logoburguer} style={{ width: 200, height: 200 }} />
