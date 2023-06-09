@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
   
     header: {
       backgroundColor: '#281610',
-      padding: 1,
+      padding: 5,
       width: 400,
       marginTop: 21
   
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       fontSize: 28,
       color: '#A5841B',
-      padding: 1,
+      padding: 5,
       marginLeft: 55,
       margin: 2,
     },

@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Button, TextInput, Image, ScrollView, TouchableOpacity, FlatList } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
-import BurguerXeg from './assets/img/x-eg.jpg';
 import Logoburguer from './assets/img/logoburguer.png';
 import { Header } from './src/components/header/index';
+import { NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator } from '@react-navigation/native-stack';
 
 
-export default function App() {
+
+
+
+function HomeScreen({ navigation }) {
   const [mostrarDescricao, setmostrarDescricao] = useState(false);
 
   const [pessoas, setPessoas] = useState([
@@ -53,11 +56,14 @@ export default function App() {
 
 
 
-
-
   return (
+  
     <ScrollView style={styles.container}>
-      
+       <Button
+      title="Pedidos"
+      onPress={() => navigation.navigate('Pedidos')}
+      style={styles.botaopedidos}
+      />
       <Header title="Header"/>
     
 
@@ -102,8 +108,31 @@ export default function App() {
           }
         </View>
       </View>
-
+  
     </ScrollView>
+    
+  );
+}
+
+function PedidosScreen() {
+  return (
+    <View>
+      <Text>Olá mundoooooooo</Text>
+    </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+ 
+  return (
+    <NavigationContainer style={styles.containernavigation}>
+      <Stack.Navigator initialRouteName="Home">
+       <Stack.Screen name='Pedidos' component={PedidosScreen}/>
+        <Stack.Screen name='Home' component={HomeScreen}/>
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 
 }
@@ -118,12 +147,9 @@ const styles = StyleSheet.create({
 
   },
 
-  header: {
+  botaopedidos: {
     backgroundColor: '#281610',
-    padding: 1,
-    width: 400,
-    marginTop: 21
-
+    color: '#A5841B',
   },
 
   tituloheader: {
