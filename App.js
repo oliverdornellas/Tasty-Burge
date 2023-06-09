@@ -5,6 +5,7 @@ import { Header } from './src/components/header/index';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Menu } from './src/components/Menu/index';
+import { NovoIten } from './src/components/NovoItens/index';
 
 
 
@@ -116,10 +117,38 @@ function HomeScreen({ navigation }) {
 }
 
 function PedidosScreen() {
+
+  const [lista, setlista] = useState([
+
+    {texto: "1 - Hamburguer da casa ", key: '1'},
+    {texto: "2 - Bravos Burguer", key: '2'}, 
+    {texto: "1 - EG Burguer",key: '3'},
+
+    ]);
+
+    const apertarItem = (key) => {
+      setlista(
+        (prevLista) => {
+          return prevLista.filter(texto => texto.key != key);
+        }
+      )
+    }
+
   return (
     <View>
        <Header title="Header"/>
        <Menu title="Menu"/>
+
+       <View style={styles.conteudo}>
+          <View>
+            <FlatList 
+            data={lista}
+            renderItem={({ item }) => (
+              <NovoIten props={item} funcao={apertarItem}/>
+            )}
+            />
+          </View>
+        </View>
     </View>
   );
 }
@@ -127,6 +156,8 @@ function PedidosScreen() {
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
+ 
  
   return (
     <NavigationContainer style={styles.containernavigation}>

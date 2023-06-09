@@ -10,6 +10,8 @@ export function Menu(props) {
         setmostrarDescricao(!mostrarDescricao)
     }
 
+  
+
     const [pessoas, setPessoas] = useState([
         { produto: 'Hamburguer - dupla carne', key: 1 },
         { produto: 'Batata Frita', key: 2 },
@@ -36,7 +38,7 @@ export function Menu(props) {
                         clientes!
                     </Text>
                 </TouchableOpacity>
-                <Text style={styles.textoLista}> Confira aqui nossos produtos! </Text>
+                <Text style={styles.textoLista}> Faça seu Pedido! </Text>
             </View>
             <View style={styles.listas}>
 
@@ -52,7 +54,11 @@ export function Menu(props) {
                     )
                 }
             </View>
+       
+
         </View>
+
+
     );
 }
 
@@ -62,6 +68,15 @@ const styles = StyleSheet.create({
     botaopedidos: {
         backgroundColor: '#281610',
         color: '#A5841B',
+      },
+
+      texto: {
+        padding: 16,
+        marginTop:16,
+        borderColor: "bbb",
+        borderWidth: 1,
+        borderStyle:'dashed',
+        borderRadius: 10
       },
     
       tituloheader: {
@@ -87,7 +102,7 @@ const styles = StyleSheet.create({
       },
     
       body: {
-        maxHeight: 400,
+        maxHeight: 1000,
         width: 400,
         padding: 40,
         marginBottom: -30,
