@@ -4,6 +4,7 @@ import Logoburguer from './assets/img/logoburguer.png';
 import { Header } from './src/components/header/index';
 import { NavigationContainer } from '@react-navigation/native';
 import {createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Menu } from './src/components/Menu/index';
 
 
 
@@ -117,7 +118,8 @@ function HomeScreen({ navigation }) {
 function PedidosScreen() {
   return (
     <View>
-      <Text>Olá mundoooooooo</Text>
+       <Header title="Header"/>
+       <Menu title="Menu"/>
     </View>
   );
 }
